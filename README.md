@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="![medical-logo-template_1286368-93639](https://github.com/user-attachments/assets/d5d94fda-968e-4afc-9c7e-539677c8a1bc)
-" alt="MediTech Hospital Logo" width="150"/>
-</p>
 
 # MediTech Hospital
 
