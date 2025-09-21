@@ -1,0 +1,28 @@
+﻿@model MediTechHospital.Models.Appointment
+
+<h2>Delete Appointment</h2>
+
+<h4>Are you sure you want to delete this appointment?</h4>
+<hr />
+
+<div class="card p-3">
+    <dl class="row">
+        <dt class="col-sm-3">Patient</dt>
+        <dd class="col-sm-9">@Model.PatientName</dd>
+
+        <dt class="col-sm-3">Doctor</dt>
+        <dd class="col-sm-9">@Model.DoctorName</dd>
+
+        <dt class="col-sm-3">Date</dt>
+        <dd class="col-sm-9">@Model.AppointmentDate.ToString("yyyy-MM-dd HH:mm")</dd>
+
+        <dt class="col-sm-3">Notes</dt>
+        <dd class="col-sm-9">@Model.Notes</dd>
+    </dl>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger">Yes, Delete</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>

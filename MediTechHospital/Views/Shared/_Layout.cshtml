@@ -1,0 +1,59 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]  MediTechHospital</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        #sidebar-wrapper {
+            min-height: 1000vh;
+            width: 250px; 
+        }
+
+        #page-content-wrapper {
+            flex: 1;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="d-flex" id="wrapper">
+
+       
+        <!-- Sidebar -->
+        <div class="bg-dark border-end" id="sidebar-wrapper">
+            <div class="sidebar-heading text-white px-3 py-4">
+                🏥 MediTech
+                
+            </div>
+            <div class="list-group list-group-flush">
+                <a href="/Dashboard" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-chart-line me-2"></i> Dashboard</a>
+                <a href="/Doctors" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-user-md me-2"></i> Doctors</a>
+                <a href="/Patients" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-users me-2"></i> Patients</a>
+                <a href="/Clinics" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-clinic-medical me-2"></i> Clinics</a>
+                <a href="/Appointments" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-calendar-check me-2"></i> Appointments</a>
+                <a href="/Ratings" class="list-group-item list-group-item-action bg-dark text-white"><i class="fas fa-star me-2"></i> Ratings</a>
+            </div>
+        </div>
+
+              <!-- Page Content -->
+        <div id="page-content-wrapper" class="p-4 w-100">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+    </div>
+
+
+    <div class="text-end p-3">
+       
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    @RenderSection("Scripts", required: false)
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</body>
+</html>

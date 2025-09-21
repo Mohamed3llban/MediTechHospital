@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MediTechHospital.Models.Clinic>
+
+<h2>Clinics</h2>
+<a asp-action="Create" class="btn btn-primary mb-3">Add Clinic</a>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Clinic Name</th>
+            <th>Location</th>
+            <th>Opening Hours</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Location</td>
+                <td>@item.OpeningHours</td>
+                <td>
+                 
+
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">Edit</a>
+
+                    <form asp-action="DeleteConfirmed" method="post" style="display:inline;"
+                          onsubmit="return confirm('Are you sure you want to delete this clinic?');">
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-sm btn-danger">Delete</button>
+                    </form>
+
+                    
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
